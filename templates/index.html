@@ -1,9 +1,139 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
-<head>
-	<title>GIFTY</title>
-</head>
-<body>
-	<header>Gifty :: The Home of Gifts</header>
-</body>
+	<head>
+		<title>gifty</title>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" type="text/css" href="{% static 'lib/materialize/css/materialize.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'stylesheets/main.css' %}">
+	</head>
+	<body>
+		<header>
+			<nav id = first-nav>
+		    	<div class="nav-wrapper">
+			      	<ul class="left hide-on-med-and-down">
+						<li><a href="#">MY WISH LIST</a></li>
+						<li><a href="#">MY ACCOUNT</a></li>
+						<li><a href="#">MY CART</a></li>
+						<li><a href="#">CHECKOUT</a></li>
+					</ul>
+			      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			      		<ul id="dropdown2" class="dropdown-content">
+				        	<li><a href="#!">Logout</a></li>
+				      	</ul>
+
+			        	<li><a href="#!" data-activates="dropdown2" class="dropdown">Username<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+				        <li><a href="#"><i class="mdi-action-add-shopping-cart"></i><span> Shopping Cart - 1</span></a></li>
+			      	</ul>
+		    	</div>
+		  	</nav>
+
+			<nav id="second-nav">
+		    	<div class="nav-wrapper">
+			      	<a href="#" class="brand-logo">
+			      		<img src="{% static 'img/logo.jpg' %}" class="app-logo">
+			      	</a>
+					      
+
+			      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+			      		<li>
+			      			<form>
+			      				<div class="search-div">
+						        	<input type="text" id="search-bar">
+						        	<a class="waves-effect waves-light btn search-button white-text">Search</a>
+					        	</div>
+					      	</form>
+			      		</li>
+			        	<li><a href="sass.html">Home</a></li>
+			        	<li><a href="#">Sign Up</a></li>
+			        	<li><a href="#">FAQ</a></li>
+			      	</ul>
+		    	</div>
+		  	</nav>
+		</header>
+
+		<section>
+			<div class="the-container">
+				<div class="first-section"></div>
+				<div class="second-section">
+					<div class="row">
+					     <div class="col s4">
+					     	<div class="gift-stock">
+					     		
+					     	</div>
+					     </div>
+					     <div class="col s4">
+					     	<div class="gift-stock">
+					     		
+					     	</div>
+					     </div>
+					     <div class="col s4">
+					     	<div class="gift-stock">
+					     		
+					     	</div>
+					     </div>
+				    </div>
+				</div>
+
+				<div class="third-section">
+					<div>
+						<h5>Welcome to our Store</h5>
+						<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+					</div>
+				</div>
+
+				<div class="featured">
+					<h5>FEATURED ITEMS</h5>
+					<div class="row">
+					     <div class="col s3">
+					     	<div class="featured-item">
+					     		<img src="{% static 'img/small-gift-3.jpeg' %}">
+					     	</div>
+					     </div>
+					     <div class="col s3">
+					     	<div class="featured-item">
+					     		<img src="{% static 'img/small-gift-3.jpeg' %}">
+					     	</div>
+					     </div>
+					     <div class="col s3">
+					     	<div class="featured-item">
+					     		<img src="{% static 'img/small-gift-3.jpeg' %}">
+					     	</div>
+					     </div>
+					     <div class="col s3">
+					     	<div class="featured-item">
+					     		<img src="{% static 'img/small-gift-3.jpeg' %}">
+					     	</div>
+					     </div>
+				    </div>
+				</div>
+			</div>
+
+			<footer>
+				This is the footer
+			</footer>
+		</section>
+
+		<script type="text/javascript" src="{% static 'lib/jquery-2.1.3.js' %}"></script>
+		<script type="text/javascript" src="{% static 'lib/materialize/js/materialize.js' %}"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.dropdown').dropdown({
+			      	inDuration: 300,
+			      	outDuration: 225,
+			      	constrain_width: false, // Does not change width of dropdown to that of the activator
+			      	hover: false, // Activate on click
+			      	alignment: 'left', // Aligns dropdown to left or right edge (works with constrain_width)
+			      	gutter: 0, // Spacing from edge
+			      	belowOrigin: false // Displays dropdown below the button
+				});
+			});
+		</script>
+
+	</body>
 </html>
+
+
+
+
+

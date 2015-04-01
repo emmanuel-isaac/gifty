@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = (
     'envvars',
     'autofixture',
     'rest_framework',
+    'debug_toolbar',
 )
 
 LOCAL_APPS = (
@@ -117,7 +118,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
     'static',
 )
 
