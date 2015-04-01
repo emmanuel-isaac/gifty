@@ -9,7 +9,7 @@ class Cart(models.Model):
 
     user = models.ForeignKey(User, related_name='carts')
     cart_number = models.PositiveIntegerField(blank=False)
-    gift_pack = models.ManyToManyField(GiftPack)
+    gift_pack = models.ManyToManyField(GiftPack, related_name='carts')
     order = models.OneToOneField(Order)
     is_paid_for = models.BooleanField(default=False)
 

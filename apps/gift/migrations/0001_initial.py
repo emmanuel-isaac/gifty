@@ -15,9 +15,11 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=50)),
+                ('price', models.PositiveIntegerField(max_length=50)),
                 ('item_detail', models.CharField(max_length=250)),
             ],
             options={
+                'ordering': ('name',),
             },
             bases=(models.Model,),
         ),
@@ -26,16 +28,12 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=50)),
-                ('price', models.PositiveIntegerField(max_length=15)),
+                ('packaging_cost', models.PositiveIntegerField(max_length=15)),
+                ('gift_items', models.ManyToManyField(related_name='giftpacks', to='gift.GiftItem')),
             ],
             options={
+                'ordering': ('name',),
             },
             bases=(models.Model,),
-        ),
-        migrations.AddField(
-            model_name='giftitem',
-            name='gift_pack',
-            field=models.ForeignKey(to='gift.GiftPack'),
-            preserve_default=True,
         ),
     ]
