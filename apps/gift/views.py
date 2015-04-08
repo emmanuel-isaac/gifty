@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse
+from django.core.context_processors import csrf
+from django.template import RequestContext
+from django.views.generic import View
 
 
 from rest_framework import viewsets
@@ -20,7 +23,7 @@ class GiftPackViewSet(viewsets.ModelViewSet):
     serializer_class = GiftPackSerializer
 
 
-
-def home(request):
-	return render(request, 'index.html')
+class HomeView(View):
+	def get(self, request):
+		return render_to_response('index.html', locals(), context_instance=RequestContext(request))
 
