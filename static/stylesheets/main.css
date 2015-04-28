@@ -176,6 +176,26 @@ footer {
 }
 
 
+/**********
+SIGNUP FORM
+***********/
+
+#signup-form {
+	width: 70vw;
+	margin: 50px auto;
+	text-align: center;
+}
+
+/*********
+LOGIN FORM
+*********/
+
+#loginModal {
+	width: 30vw;
+	height: 50vh;
+}
+
+
 
 
 

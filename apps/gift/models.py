@@ -13,7 +13,7 @@ class GiftItem(models.Model):
 
     def get_item_giftpacks(self):
         obj = self.giftpacks.all()
-        print obj
+        return obj
 
     class Meta:
         ordering = ('name',)

@@ -6,12 +6,12 @@ from django.core.context_processors import csrf
 from django.contrib.auth import login, authenticate, logout
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 # Local modules
 from apps.giftyuser.models import User, StaffMember
 from apps.giftyuser.serializers import UserSerializer, StaffMemberSerializer
+from apps.giftyuser.forms import UserForm
 
 
 # Third party modules
@@ -42,7 +42,6 @@ class LoginView(View):
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
-				print request.user.is_authenticated()
 				return HttpResponseRedirect(reverse('home'), locals())
 			else:
 				print "nay"
@@ -57,16 +56,35 @@ class LoginView(View):
 # Class Based Logout View
 class LogoutView(View):
 	def get(self, request):
-		print request
 		logout(request)
 		return render_to_response('auth/user_logout.html', locals())
 
+# Class Based Signup View
+class UserCreate(View):
+	def get(self, request):
+		form = UserForm()
+		return render_to_response('auth/signup.html', locals(), context_instance=RequestContext(request))
 
-class UserCreate(CreateView):
-	model = User
-	fields = ['first_name', 'last_name', 'username', 'email', 'address', 'phone', 'password',]
-	template_name = 'auth/signup.html'
+	def post(self, request):
+		form = UserForm(request.POST)
+		if form.is_valid():
+			if request.POST.get('password') == request.POST.get('confirm-password'):
+				try:
+					new_user = form.save(commit=False)
+					new_user.set_password(request.POST.get('password', ''))
+					new_user.save()
+					user = authenticate(username=request.POST.get('username'), password=request.POST.get('password'))
+					login(request, user)
+					return HttpResponse('Signed in and Logged in')
 
+				except Exception, e:
+					raise e
+			else:
+				password_error = 'Passwords do not match'
+				return render_to_response('auth/signup.html', locals(), context_instance=RequestContext(request))
+		password_error = 'Please, fill all fields'
+			
+		return render_to_response('auth/signup.html', locals(), context_instance=RequestContext(request))
 
 
 
