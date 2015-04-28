@@ -34,7 +34,6 @@ class LoginView(View):
 		return HttpResponseRedirect(reverse('home'), locals())
 
 	def post(self, request):
-		print request.POST
 		username = request.POST.get('username', '')
 		password = request.POST.get('password', '')
 
@@ -44,12 +43,10 @@ class LoginView(View):
 				login(request, user)
 				return HttpResponseRedirect(reverse('home'), locals())
 			else:
-				print "nay"
+				return HttpResponseRedirect(reverse('home'), locals())
 				
 		else:
 			return HttpResponseRedirect(reverse('home'), locals())
-
-		return HttpResponse("This is the login view")
 
 
 

@@ -48,7 +48,7 @@
 			      			<form>
 			      				<div class="search-div">
 						        	<input type="text" id="search-bar">
-						        	<a class="waves-effect waves-light btn search-button white-text">Search</a>
+						        	<a class="waves-effect waves-light btn white-text search-button red darken-4">Search</a>
 					        	</div>
 					      	</form>
 			      		</li>
@@ -75,6 +75,7 @@
 				    	<form action="{% url 'login' %}" method="POST">{% csrf_token %}
 				    		<div>
 					    		<div class="input-field">
+					    			{{ form }}
 						    		<label for="username">Username</label>
 						    		<input type="text" id="username" name="username">
 					    		</div>

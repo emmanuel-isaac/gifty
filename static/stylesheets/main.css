@@ -75,20 +75,24 @@ main {
 }
 
 #search-bar {
-	/*border: thin black solid;*/
-	border: none !important;
-	background: #bdbdbd;
-	width: 60%;
-	height: 2rem;
+	border: thin #b71c1c solid;
+	width: 62%;
+	height: 34px;
+	padding-left: 5px;
+	color: #424242;
+}
+
+#search-bar:focus {
+	box-shadow: 0 1px 0 0;
 }
 
 .search-button {
-	height: 2rem !important;
 	position: relative;
 	right: 5px;
 	top: 7px;
-	border-radius: none !important;
+	border: thin #b71c1c solid;
 }
+
 
 .search-button:hover {
 	text-decoration: none !important;
