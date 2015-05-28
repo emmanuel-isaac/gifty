@@ -1,205 +1,33 @@
-main {
-	min-height: 46vh;
-}
-
-#first-nav {
-	height: 30px;
-	background: #f7f7f7;
-}
-
-#first-nav li a, .dropdown-content a {
-	font-size: .75rem;
-}
-
-.app-logo {
-	width: 70px;
-	height: auto;
-	position: relative;
-	bottom: 10px;
-	margin-left: 10vw;
-}
-
-#first-nav li span {
-	position: relative;
-	bottom: 3px;
-}
-
-#first-nav .badge {
-	top: 1px;
-	border: thin black solid;
-	max-height: 70%
-}
-
-#first-nav i {
-	font-size: 1.2rem;
-}
-
-.nav-wrapper, .nav-wrapper ul, .nav-wrapper li {
-	height: 100%;
-}
-
-#first-nav li {
-	height: 50px;
-	position: relative;
-	bottom: 15px;
-}
-
-#dropdown2 li {
-	height: 45px !important;
-}
-
-.nav-wrapper ul {
-	height: 100%;
-}
-
-#second-nav {
+.main-nav {
 	background-color: #fff;
 	height: 100px;
-	padding: 20px;
+	padding: 25px;
 }
 
-#second-nav li:hover {
-	background: none !important;
+.top-nav {
+	margin-bottom: 0;
+	border-bottom: none;
+	min-height: 40px;
+	max-height: 40px;
+	padding: 10px 60px;
 }
 
-#second-nav li a:hover {
-	text-decoration: underline;
+.top-nav a {
+	font-size: 12px;
+	padding: 0 5px !important;
 }
 
-.brand-logo, nav li a, ul a {
-	color: #424242 !important;	
+img.app-logo {
+  height: 80px;
+  width: auto;
+  position: relative;
+  bottom: 30px;
+ }
+
+
+.navbar-form {
+	margin-left: 30%;
 }
-
-.search-div {
-	width: 30vw;
-}
-
-#search-bar {
-	border: thin #b71c1c solid;
-	width: 62%;
-	height: 34px;
-	padding-left: 5px;
-	color: #424242;
-}
-
-#search-bar:focus {
-	box-shadow: 0 1px 0 0;
-}
-
-.search-button {
-	position: relative;
-	right: 5px;
-	top: 7px;
-	border: thin #b71c1c solid;
-}
-
-
-.search-button:hover {
-	text-decoration: none !important;
-}
-
-/***************************************************
-SECTION
-***************************************************/
-
-.first-section {
-	height: 350px;
-	width: 99vw;
-	background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),url('../img/gifts1.jpg') no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-}
-
-.second-section .s4 {
-	min-height: 200px;
-	padding: 5px;
-}
-
-.gift-stock {
-	min-height: 200px;
-}
-
-.s4:nth-child(1) div {
-	background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),url('../img/gift-img-1.jpeg') no-repeat;
-  background-size: cover;
-}
-
-.s4:nth-child(2) div {
-	background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),url('../img/gift-img-2.jpeg') no-repeat;
-  background-size: cover;
-}
-
-.s4:nth-child(3) div {
-	background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),url('../img/small-gift-3.jpeg') no-repeat;
-  background-size: cover;
-}
-
-.third-section {
-	text-align: center;
-	padding: 0 10% 20px;
-}
-
-.third-section div {
-	border-bottom: 2px #ef5350 solid;
-}
-
-.featured {
-	height: 60vh;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-.featured-item {
-	height: 55vh;
-	background: #f5f5f5;
-}
-
-.featured-item img {
-	margin-top: 5px;
-	height: 30vh;
-	width: auto;
-	max-width: 90%;
-}
-
-footer {
-	min-height: 40vh;
-	background: #212121;
-	color: #fff;
-}
-
-
-/**********
-SIGNUP FORM
-***********/
-
-#signup-form {
-	width: 70vw;
-	margin: 50px auto;
-	text-align: center;
-}
-
-/*********
-LOGIN FORM
-*********/
-
-#loginModal {
-	width: 30vw;
-	height: 50vh;
-}
-
-
 
 
 
