@@ -1,0 +1,28 @@
+{% extends "app_base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+  <div  class="login-form">
+    {% if form.errors %}
+      <p class="error">Sorry, Username or Password is incorrect</p>
+    {% endif %}
+    <div>
+      <h4>LOGIN</h4>
+      <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+        <div>
+          <div class="input-field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+          </div>
+
+          <div class="input-field">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+          </div>
+          <button type="submit" name="action">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock content %}
