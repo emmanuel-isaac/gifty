@@ -15,17 +15,4 @@ class User(DjangoUser):
 User._meta.get_field('first_name').max_length=50
 User._meta.get_field('last_name').max_length=50
 User._meta.get_field('email').max_length=100
-
-
-class StaffMember(models.Model):
-
-    user = models.OneToOneField(User)
-
-    def __unicode__(self):
-        return '{}'.format(self.user.username)
-
-    def save(self, *args, **kwargs):
-       user = User.objects.get(pk = self.user.pk)
-       user.is_staff = True
-       user.save()
-       super(StaffMember, self).save(*args, **kwargs)
+User._meta.get_field('is_staff').default=False

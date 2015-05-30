@@ -9,8 +9,8 @@ from django.template import RequestContext
 
 
 # Local modules
-from apps.giftyuser.models import User, StaffMember
-from apps.giftyuser.serializers import UserSerializer, StaffMemberSerializer
+from apps.giftyuser.models import User
+from apps.giftyuser.serializers import UserSerializer
 from apps.giftyuser.forms import UserForm, LoginForm
 
 
@@ -23,10 +23,6 @@ from rest_framework import viewsets
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-class StaffMemberViewSet(viewsets.ModelViewSet):
-    queryset = StaffMember.objects.all()
-    serializer_class = StaffMemberSerializer
 
 # Class Based Login View
 class LoginView(View):

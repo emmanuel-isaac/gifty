@@ -4,10 +4,9 @@ from django.contrib import admin
 
 
 
-from apps.giftyuser.models import User, StaffMember
+from apps.giftyuser.models import User
 from apps.giftyuser.views import (
 	UserViewSet,
-	StaffMemberViewSet,
 	LoginView,
 	LogoutView,
     UserCreate,
@@ -19,7 +18,6 @@ from apps.cart.views import CartViewSet
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
-router.register(r'staff', StaffMemberViewSet)
 router.register(r'items', GiftItemViewSet)
 router.register(r'packs', GiftPackViewSet)
 router.register(r'carts', CartViewSet)
