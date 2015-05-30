@@ -56,8 +56,11 @@ SECTION
 }
 
 .featured-items h3 {
-    border-bottom: 2px #777 solid;
+    width: 60vw;
+    border-bottom: 5px #ccc solid;
+    border-radius: 5px;
     padding: 5px;
+    margin: 0 auto;
 }
 
 
@@ -65,21 +68,31 @@ SECTION
 LOGIN FORM
 ************/
 
-.login-form {
+.login-form,
+#signup-form {
     width: 400px;
-    height: 60vh;
-    border-radius: 5px;
-    margin: 50px auto;
-    text-align: center;
+    min-height: 60vh;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: left;
+    border: thin #ccc solid;
+    padding: 10px;
 }
 
-.login-form h4 {
+.login-form h4,
+#signup-form h4 {
     color: #fff;
-    background-color: #5bc0de;
+    background-color: #337ab7;
     border-color: #46b8da;
     width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.signup-submit {
+    width: 100%;
 }
 
 
