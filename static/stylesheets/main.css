@@ -2,6 +2,7 @@
 	background-color: #fff;
 	height: 100px;
 	padding: 25px;
+    margin-bottom: 0;
 }
 
 .top-nav {
@@ -29,6 +30,57 @@ img.app-logo {
 	margin-left: 30%;
 }
 
+
+/*****************
+SECTION
+******************/
+
+.welcome-section {
+    height: 70vh;
+    width: 100vw;
+    margin-top: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),url('../img/gifts1.jpg') no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.featured-items {
+    width: 100vw;
+    min-height: 80vh;
+    border: thin black solid;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.featured-items h3 {
+    border-bottom: 2px #777 solid;
+    padding: 5px;
+}
+
+
+/************
+LOGIN FORM
+************/
+
+.login-form {
+    width: 400px;
+    height: 60vh;
+    border-radius: 5px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.login-form h4 {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 
 

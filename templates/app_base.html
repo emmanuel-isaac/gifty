@@ -16,21 +16,21 @@
 		<header>
 
 			<nav class="navbar navbar-default top-nav">
-					<ul class="nav navbar-nav navbar-right">
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{user.username}}<span class="caret"></span></a>
-		          <ul class="dropdown-menu" role="menu">
-								<li><a href="#">MY WISH LIST</a></li>
-								<li class="divider"></li>
-								<li><a href="#">MY ACCOUNT</a></li>
-								<li class="divider"></li>
-								<li><a href="#">MY CART</a></li>
-								<li class="divider"></li>
-								<li><a href="#">CHECKOUT</a></li>
-		          </ul>
-		        </li>
-		        <li><a href="#">Shopping Cart - 1</a></li>
-					</ul>
+				<ul class="nav navbar-nav navbar-right">
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{user.username}}<span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+							<li><a href="#">MY WISH LIST</a></li>
+							<li class="divider"></li>
+							<li><a href="#">MY ACCOUNT</a></li>
+							<li class="divider"></li>
+							<li><a href="#">MY CART</a></li>
+							<li class="divider"></li>
+							<li><a href="#">CHECKOUT</a></li>
+	          </ul>
+	        </li>
+		      <li><a href="#">Shopping Cart - 1</a></li>
+				</ul>
 			</nav>
 
 
@@ -71,46 +71,7 @@
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
 			</nav>
-
-
-
-
-
-
-		<div>
-			<!-- Modal Structure -->
-			<div id="loginModal" class="modal">
-			  	<div class="modal-content login-modal">
-			    	{% if form.errors %}
-			    		<p class="error">Sorry, Username or Password is incorrect</p>
-			    	{% endif %}
-			    	<div class="login-form">
-			    		<h5>Login</h5>
-				    	<form action="{% url 'login' %}" method="POST">{% csrf_token %}
-				    		<div>
-					    		<div class="input-field">
-					    			{{ form }}
-						    		<label for="username">Username</label>
-						    		<input type="text" id="username" name="username">
-					    		</div>
-
-					    		<div class="input-field">
-						    		<label for="password">Password</label>
-						    		<input type="password" id="password" name="password">
-					    		</div>
-
-					    		<div class="input-field">
-					    			<input type="hidden" id="token" name="csrfmiddlewaretoken" value="{{request.META.CSRF_COOKIE}}">
-					    		</div>
-					    		<button class="btn waves-effect waves-light login-button right" type="submit" name="action">Login
-	    							<i class="mdi-content-send right"></i>
-	  							</button>
-				    		</div>
-				    	</form>
-			    	</div>
-			  	</div>
-			</div>
-		</div>
+		</header>
 
 		<section>
 			<main>
@@ -126,8 +87,5 @@
 
 		<script type="text/javascript" src="{% static 'lib/jquery-2.1.3.js' %}"></script>
 		<script type="text/javascript" src="{% static 'lib/bootstrap-3.3.4-dist/js/bootstrap.js' %}"></script>
-
-		{% block local_js %}
-			
-		{% endblock local_js %}
+		{% block local_js %}{% endblock local_js %}
 	</body>

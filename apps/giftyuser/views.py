@@ -11,7 +11,7 @@ from django.template import RequestContext
 # Local modules
 from apps.giftyuser.models import User, StaffMember
 from apps.giftyuser.serializers import UserSerializer, StaffMemberSerializer
-from apps.giftyuser.forms import UserForm
+from apps.giftyuser.forms import UserForm, LoginForm
 
 
 # Third party modules
@@ -31,30 +31,26 @@ class StaffMemberViewSet(viewsets.ModelViewSet):
 # Class Based Login View
 class LoginView(View):
 	def get(self, request):
-		return HttpResponseRedirect(reverse('home'), locals())
+		form = LoginForm()
+		return render_to_response('giftyuser/login.html', locals(), context_instance=RequestContext(request))
 
 	def post(self, request):
-		username = request.POST.get('username', '')
-		password = request.POST.get('password', '')
-
-		if username and password:
+		form = LoginForm(request.POST)
+		if form.is_valid:
+			username = form.data['username']
+			password = form.data['password']
 			user = authenticate(username=username, password=password)
 			if user is not None:
 				login(request, user)
 				return HttpResponseRedirect(reverse('home'), locals())
-			else:
-				return HttpResponseRedirect(reverse('home'), locals())
-				
-		else:
-			return HttpResponseRedirect(reverse('home'), locals())
-
+		return render_to_response('giftyuser/login.html', locals(), context_instance=RequestContext(request))
 
 
 # Class Based Logout View
 class LogoutView(View):
 	def get(self, request):
 		logout(request)
-		return render_to_response('auth/user_logout.html', locals())
+		return HttpResponseRedirect(reverse('home'), locals())
 
 # Class Based Signup View
 class UserCreate(View):
