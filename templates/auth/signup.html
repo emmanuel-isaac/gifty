@@ -7,66 +7,32 @@
 
 {% block content %}
 
-	<div id="signup-form">
+	<div id="signup-form" class="container">
 		<h4>SIGN UP</h4>
-		{% if password_error %}
-			<p class='red-text'>{{ password_error }}</p>
-		{% endif %}
-		<form action="{% url 'signup' %}" method="post">
-	    {% csrf_token %}
-	    	<div class='row'>
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.first_name.errors }}
-				    <label for="{{ form.first_name.id_for_label }}">First Name:</label>
-				    {{ form.first_name }}
-				</div>
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.last_name.errors }}
-				    <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
-				    {{ form.last_name }}
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.username.errors }}
-				    <label for="{{ form.username.id_for_label }}">Username:</label>
-				    {{ form.username }}
-				</div>
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.email.errors }}
-				    <label for="{{ form.email.id_for_label }}">Email:</label>
-				    <input type="email" name="email" id="{{ form.email.id_for_label }}">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.address.errors }}
-				    <label for="{{ form.address.id_for_label }}">Address:</label>
-				    {{ form.address }}
-				</div>
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.phone.errors }}
-				    <label for="{{ form.phone.id_for_label }}">Phone:</label>
-				    <input type="number" name="phone" id="{{ form.phone.id_for_label }}">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="fieldWrapper col s6 input-field">
-				    {{ form.password.errors }}
-				    <label for="{{ form.password.id_for_label }}">Password:</label>
-				    <input type="password" name="password" id="{{ form.password.id_for_label }}">
-				</div>
-				<div class="input-field col s6">
-					<input type="password" name="confirm-password" id="confirm-password">
-					<label for="confirm-password">Confirm Password:</label>
-				</div>
-			</div>
-			<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    			<i class="mdi-content-send right"></i>
-  			</button>
+		<form action="{% url 'signup' %}" method="post">{% csrf_token %}
+			{{ form.non_field_errors }}
+			<div class="form-group">
+		    <label for="first_name">First Name:</label>
+		    <input type="text" class="form-control" name="first_name" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="last_name">Last Name:</label>
+		    <input type="text" class="form-control" name="last_name" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="username">Username:</label>
+		    <input type="text" class="form-control" name="username" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="email">Email:</label>
+		    <input type="email" class="form-control" name="email" required>
+		  </div>
+		  <div class="form-group">
+		    <label for="password">Password:</label>
+		    <input type="password" class="form-control" name="password" required>
+		  </div>
+	    <button class="btn btn-success btn-lg signup-submit">Submit</button>
+	    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 		</form>
 	</div>
 {% endblock content %}
@@ -74,21 +40,7 @@
 
 {% block local_js %}
 	
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.errorlist').hide();
-			var markErrorInput = function () {
-				num_divs = $(".fieldWrapper:contains('This field is required')").length
-				count = 0
-				while (count < num_divs) {
-					div = $(".fieldWrapper:contains('This field is required')")[count];
-					$(div).find('input').css( "border-bottom", "thin red solid" );
-					count++;
-				}
-			};
-			markErrorInput();
-		});
-	</script>
+	<script type="text/javascript"></script>
 
 {% endblock local_js %}
 
