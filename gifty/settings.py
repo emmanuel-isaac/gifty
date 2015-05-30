@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DEFAULT_APPS = (
-    'django.contrib.admin',
+    'django.contrib.admin.apps.SimpleAdminConfig',  # instead of 'django.contrib.admin''
     'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +52,7 @@ THIRD_PARTY_APPS = (
     'autofixture',
     'rest_framework',
     'debug_toolbar',
+    'djrill',
 )
 
 LOCAL_APPS = (
@@ -141,3 +142,15 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# Temporary Email settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'isaac.e.ayodeji@gmail.com'
+EMAIL_HOST_PASSWORD = envvars.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'isaac.e.ayodeji@gmail.com'
+
+# DJRILL SETTINGS
+MANDRILL_API_KEY = "V8UdBLD6VE_7tDldLhDgrA"
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
