@@ -4,9 +4,9 @@ from django.contrib.auth.models import UserManager, User as DjangoUser
 # Create your models here.
 
 class User(DjangoUser):
-    phone = models.PositiveIntegerField(blank=False, max_length=20,)
+    phone = models.PositiveIntegerField(max_length=20, null=True)
     address = models.CharField(max_length=250)
-
+    activation_key = models.CharField(max_length=40, blank=True)
     objects = UserManager()
 
     def __str__(self):
