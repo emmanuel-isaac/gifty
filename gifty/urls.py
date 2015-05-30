@@ -1,19 +1,20 @@
 from django.conf.urls import patterns, include, url
 from rest_framework import routers
 from django.contrib import admin
-
-
+from djrill import DjrillAdminSite
 
 from apps.giftyuser.models import User
 from apps.giftyuser.views import (
-	UserViewSet,
-	LoginView,
-	LogoutView,
+    UserViewSet,
+    LoginView,
+    LogoutView,
     UserCreate,
 )
 from apps.gift.views import GiftItemViewSet, GiftPackViewSet, HomeView
 from apps.cart.views import CartViewSet
 
+admin.site = DjrillAdminSite()
+admin.autodiscover()
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
