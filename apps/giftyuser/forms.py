@@ -5,7 +5,7 @@ from apps.giftyuser.models import User
 class UserForm(forms.ModelForm):
 	class Meta:
 		model = User
-		fields = ['first_name', 'last_name', 'username', 'email', 'address', 'phone', 'password']
+		fields = ['first_name', 'last_name', 'username', 'email', 'password']
 
 
 class LoginForm(forms.Form):
