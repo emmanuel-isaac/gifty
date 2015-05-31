@@ -156,3 +156,5 @@ DEFAULT_FROM_EMAIL = 'isaac.e.ayodeji@gmail.com'
 # DJRILL SETTINGS
 MANDRILL_API_KEY = "V8UdBLD6VE_7tDldLhDgrA"
 EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
+
+AUTH_USER_MODEL = 'auth.User'
