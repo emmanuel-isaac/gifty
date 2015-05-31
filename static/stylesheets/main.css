@@ -1,6 +1,6 @@
 .main-nav {
 	background-color: #fff;
-	height: 100px;
+	min-height: 100px;
 	padding: 25px;
     margin-bottom: 0;
 }
@@ -24,11 +24,6 @@ img.app-logo {
   position: relative;
   bottom: 30px;
  }
-
-
-.navbar-form {
-	margin-left: 30%;
-}
 
 
 /*****************
