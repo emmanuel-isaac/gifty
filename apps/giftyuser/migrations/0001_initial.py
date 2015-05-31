@@ -13,20 +13,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='StaffMember',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-            ],
-            options={
-            },
-            bases=(models.Model,),
-        ),
-        migrations.CreateModel(
             name='User',
             fields=[
                 ('user_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to=settings.AUTH_USER_MODEL)),
-                ('phone', models.PositiveIntegerField(max_length=20)),
+                ('phone', models.PositiveIntegerField(max_length=20, null=True)),
                 ('address', models.CharField(max_length=250)),
+                ('activation_key', models.CharField(max_length=40, blank=True)),
             ],
             options={
                 'abstract': False,
@@ -34,11 +26,5 @@ class Migration(migrations.Migration):
                 'verbose_name_plural': 'users',
             },
             bases=('auth.user',),
-        ),
-        migrations.AddField(
-            model_name='staffmember',
-            name='user',
-            field=models.OneToOneField(to='giftyuser.User'),
-            preserve_default=True,
         ),
     ]
