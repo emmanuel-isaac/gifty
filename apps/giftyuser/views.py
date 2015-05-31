@@ -79,7 +79,6 @@ class UserCreate(View):
 def register_confirm(request, activation_key):
     if request.user.is_active:
         return HttpResponseRedirect(reverse('home'))
-    import ipdb; ipdb.set_trace()
     user = get_object_or_404(User, activation_key=activation_key)
     user.is_active = True
     user.save()
