@@ -1,6 +1,6 @@
 from django import forms
 
-from apps.giftyuser.models import User
+from .models import User
 
 class UserForm(forms.ModelForm):
 	class Meta:
