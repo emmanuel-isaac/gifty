@@ -1,0 +1,105 @@
+.main-nav {
+	background-color: #fff;
+	min-height: 100px;
+	padding: 25px;
+    margin-bottom: 0;
+}
+
+.top-nav {
+	margin-bottom: 0;
+	border-bottom: none;
+	min-height: 40px;
+	max-height: 40px;
+	padding: 10px 60px;
+}
+
+.top-nav a {
+	font-size: 12px;
+	padding: 0 5px !important;
+}
+
+img.app-logo {
+  height: 80px;
+  width: auto;
+  position: relative;
+  bottom: 30px;
+ }
+
+
+/*****************
+SECTION
+******************/
+
+.welcome-section {
+    height: 70vh;
+    width: 100vw;
+    margin-top: 0;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),url('../img/gifts1.jpg') no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+.featured-items {
+    width: 100vw;
+    min-height: 80vh;
+    border: thin black solid;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.featured-items h3 {
+    width: 60vw;
+    border-bottom: 5px #ccc solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+
+/************
+LOGIN FORM
+************/
+
+.login-form,
+#signup-form {
+    width: 400px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: left;
+    border: thin #ccc solid;
+    padding: 10px;
+}
+
+.login-form h4,
+#signup-form h4 {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #46b8da;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.signup-submit {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
