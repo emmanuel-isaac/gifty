@@ -9,3 +9,4 @@ ipdb==0.8
 ipython==3.0.0
 Pygments==2.0.2
 sqlparse==0.1.14
+whitenoise==1.0.6
